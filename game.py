@@ -47,8 +47,10 @@ def ghost_color(name, mode):
 
 
 def on_pellet_eaten(score, pellets_left):
-    """Called after every pellet is eaten; add sound, flashes, or bonus fruit here."""
-    pass
+    if pellets_left == 0:
+        print(f"All pellets eaten! Final score: {score}")
+    elif pellets_left % 10 == 0:
+        print(f"Pellets remaining: {pellets_left} | Score: {score}")
 
 
 def bonus_life_threshold():
